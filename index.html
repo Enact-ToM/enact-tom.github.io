@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="EnactToM: An Evolving Benchmark for Functional Theory of Mind in Embodied Agents">
+  <meta name="description" content="EnactToM is an evolving benchmark of embodied multi-agent tasks for measuring functional Theory of Mind under partial observability, private information, and constrained communication.">
+  <meta name="keywords" content="Theory of Mind, embodied AI, multi-agent, epistemic reasoning, benchmark, LLM evaluation, Habitat">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="EnactToM: An Evolving Benchmark for Functional Theory of Mind in Embodied Agents">
+  <meta property="og:description" content="EnactToM measures whether embodied agents can act on partner beliefs, not merely report them.">
+  <meta property="og:url" content="https://enacttom.github.io">
+  <meta property="og:image" content="https://enacttom.github.io/static/images/main_figure.png">
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Theory of Mind">
+  <meta property="article:tag" content="Embodied AI">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EnactToM: An Evolving Benchmark for Functional Theory of Mind in Embodied Agents">
+  <meta name="twitter:description" content="EnactToM measures functional Theory of Mind in embodied multi-agent settings.">
+  <meta name="twitter:image" content="https://enacttom.github.io/static/images/main_figure.png">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="EnactToM: An Evolving Benchmark for Functional Theory of Mind in Embodied Agents">
+  <meta name="citation_author" content="Juneja, Gurusha">
+  <meta name="citation_author" content="Lu, Dylan">
+  <meta name="citation_author" content="Agashe, Saaket">
+  <meta name="citation_author" content="Diwane, Parth">
+  <meta name="citation_author" content="Gunn, Edward">
+  <meta name="citation_author" content="Srinivasa, Jayanth">
+  <meta name="citation_author" content="Liu, Gaowen">
+  <meta name="citation_author" content="Wang, William Yang">
+  <meta name="citation_author" content="Du, Yali">
+  <meta name="citation_author" content="Wang, Xin Eric">
+  <meta name="citation_publication_date" content="2026/05/11">
+  <meta name="citation_date" content="2026/05/11">
+  <meta name="citation_online_date" content="2026/05/11">
+  <meta name="citation_conference_title" content="NeurIPS 2026">
+  <meta name="citation_arxiv_id" content="2605.09826">
+  <meta name="citation_doi" content="10.48550/arXiv.2605.09826">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2605.09826">
+
+  <title>EnactToM: An Evolving Benchmark for Functional Theory of Mind in Embodied Agents</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
+  <link rel="apple-touch-icon" href="static/images/favicon.png">
+
+  <!-- Critical CSS -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "EnactToM: An Evolving Benchmark for Functional Theory of Mind in Embodied Agents",
+    "description": "An evolving benchmark for functional Theory of Mind in embodied multi-agent settings.",
+    "datePublished": "2026-05-11",
+    "url": "https://enacttom.github.io",
+    "sameAs": "https://arxiv.org/abs/2605.09826",
+    "identifier": "arXiv:2605.09826",
+    "doi": "10.48550/arXiv.2605.09826",
+    "keywords": ["Theory of Mind", "embodied AI", "multi-agent", "epistemic reasoning", "benchmark"],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">EnactToM: An Evolving Benchmark for Functional Theory of Mind in Embodied Agents</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://gurusha01.github.io/" target="_blank">Gurusha Juneja</a>,</span>
+              <span class="author-block">
+                <a href="https://www.dylanlu.com/" target="_blank">Dylan Lu</a>,</span>
+              <span class="author-block">
+                <a href="https://saa1605.github.io/" target="_blank">Saaket Agashe</a>,</span>
+              <span class="author-block">
+                <a href="https://parthdiwane.dev/" target="_blank">Parth Diwane</a>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/edward-gunn/" target="_blank">Edward Gunn</a>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=HtNfeKYAAAAJ" target="_blank">Jayanth Srinivasa</a>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=NIv_aeQAAAAJ" target="_blank">Gaowen Liu</a>,</span>
+              <span class="author-block">
+                <a href="https://sites.cs.ucsb.edu/~william/" target="_blank">William Yang Wang</a>,</span>
+              <span class="author-block">
+                <a href="https://yalidu.github.io/" target="_blank">Yali Du</a>,</span>
+              <span class="author-block">
+                <a href="https://eric-xw.github.io/" target="_blank">Xin Eric Wang</a></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://github.com/ThePickleGawd/EnactTom" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2605.09826" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded" style="background: #cbd5e1; color: #94a3b8; cursor: default; pointer-events: none;">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Dataset (coming soon)</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- Main figure -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/main_figure.png" alt="Figure 1 from the EnactToM paper showing an embodied task, verified evolution pipeline, and the distinction between saying and doing Theory of Mind." style="width: 100%; border-radius: 12px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);" loading="lazy"/>
+      <h2 class="subtitle has-text-centered" style="margin-top: 1.5rem;">
+        <b>Figure 1.</b> Agents operate in a shared 3D household environment but receive different private observations and can exchange only limited messages. Tasks are generated from scenes and mechanics, formally verified for solvability and epistemic validity, calibrated, and evolved from model failures. The evaluation separates literal ToM, reporting another agent's belief when asked, from functional ToM, using that belief to act correctly.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End main figure -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Theory of Mind (ToM), the ability to track others' epistemic state, makes humans efficient collaborators. AI agents need the same capacity in multi-agent settings, yet existing benchmarks mostly test <em>literal</em> ToM by asking direct belief questions. The ability to act optimally on implicit beliefs in embodied environments, called <em>functional</em> ToM, remains largely untested. We introduce <b>EnactToM</b>, an evolving benchmark of 300 embodied multi-agent tasks set in a 3D household with partial observability, private information, and constrained communication. Each task is formally verified for solvability and required epistemic depth, and new tasks are generated to increase difficulty as models improve. On the hard split, all seven evaluated frontier models score <b>0.0% pass^3</b> on functional task completion, while averaging <b>45.0%</b> on literal belief probes. Manual analysis traces <b>93%</b> of sampled failures to epistemic coordination breakdowns such as withheld information, ignored partner constraints, and misallocated messages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Key Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            We evaluate <b>seven frontier models</b> on matched <b>EnactToM Standard</b> and <b>EnactToM Hard</b> subsets. Each split contains 150 tasks spanning cooperative and mixed-motive settings; the hard split uses a higher seed-task failure ratio and concentrates on tasks current frontier models fail. The central pattern is a sharp act-report gap: on the hard split, every model scores <b>0.0% functional pass^3</b>, while literal belief-probe accuracy averages <b>45.0%</b>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div style="overflow-x: auto;">
+          <table class="table is-bordered is-striped is-fullwidth" style="font-size: 0.82rem; min-width: 1120px;">
+            <thead>
+              <tr>
+                <th rowspan="3">Model</th>
+                <th colspan="6" style="text-align:center;">EnactToM Standard</th>
+                <th colspan="6" style="text-align:center;">EnactToM Hard</th>
+              </tr>
+              <tr>
+                <th colspan="3" style="text-align:center;">Functional</th>
+                <th colspan="3" style="text-align:center;">Literal</th>
+                <th colspan="3" style="text-align:center;">Functional</th>
+                <th colspan="3" style="text-align:center;">Literal</th>
+              </tr>
+              <tr>
+                <th style="text-align:center;">Avg</th>
+                <th style="text-align:center;">pass@3</th>
+                <th style="text-align:center;">pass^3</th>
+                <th style="text-align:center;">Avg</th>
+                <th style="text-align:center;">pass@3</th>
+                <th style="text-align:center;">pass^3</th>
+                <th style="text-align:center;">Avg</th>
+                <th style="text-align:center;">pass@3</th>
+                <th style="text-align:center;">pass^3</th>
+                <th style="text-align:center;">Avg</th>
+                <th style="text-align:center;">pass@3</th>
+                <th style="text-align:center;">pass^3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Gemini-Pro</td><td style="text-align:center;">39.2&plusmn;4.5</td><td style="text-align:center;">62.5</td><td style="text-align:center;">12.5</td><td style="text-align:center;">27.5&plusmn;4.1</td><td style="text-align:center;">47.5</td><td style="text-align:center;">12.5</td><td style="text-align:center;">6.7&plusmn;2.3</td><td style="text-align:center;">20.0</td><td style="text-align:center;"><b>0.0</b></td><td style="text-align:center;"><b>63.3&plusmn;4.4</b></td><td style="text-align:center;"><b>87.5</b></td><td style="text-align:center;"><b>37.5</b></td></tr>
+              <tr><td>Gemini-Flash</td><td style="text-align:center;"><b>42.5&plusmn;4.5</b></td><td style="text-align:center;"><b>70.0</b></td><td style="text-align:center;"><b>22.5</b></td><td style="text-align:center;">27.5&plusmn;4.1</td><td style="text-align:center;">52.5</td><td style="text-align:center;">12.5</td><td style="text-align:center;">4.2&plusmn;1.8</td><td style="text-align:center;">12.5</td><td style="text-align:center;"><b>0.0</b></td><td style="text-align:center;">42.5&plusmn;4.5</td><td style="text-align:center;">72.5</td><td style="text-align:center;">12.5</td></tr>
+              <tr><td>GPT-5.4</td><td style="text-align:center;">17.5&plusmn;3.5</td><td style="text-align:center;">32.5</td><td style="text-align:center;">5.0</td><td style="text-align:center;">17.5&plusmn;3.5</td><td style="text-align:center;">35.0</td><td style="text-align:center;">0.0</td><td style="text-align:center;">3.3&plusmn;1.6</td><td style="text-align:center;">10.0</td><td style="text-align:center;"><b>0.0</b></td><td style="text-align:center;">44.2&plusmn;4.5</td><td style="text-align:center;">77.5</td><td style="text-align:center;">15.0</td></tr>
+              <tr><td>O3</td><td style="text-align:center;">12.5&plusmn;3.0</td><td style="text-align:center;">27.5</td><td style="text-align:center;">0.0</td><td style="text-align:center;"><b>34.2&plusmn;4.3</b></td><td style="text-align:center;"><b>55.0</b></td><td style="text-align:center;"><b>15.0</b></td><td style="text-align:center;">5.0&plusmn;2.0</td><td style="text-align:center;">15.0</td><td style="text-align:center;"><b>0.0</b></td><td style="text-align:center;">52.5&plusmn;4.6</td><td style="text-align:center;"><b>87.5</b></td><td style="text-align:center;">25.0</td></tr>
+              <tr><td>Kimi-K2.5<sup>*</sup></td><td style="text-align:center;">5.8&plusmn;2.1</td><td style="text-align:center;">15.0</td><td style="text-align:center;">0.0</td><td style="text-align:center;">5.0&plusmn;2.0</td><td style="text-align:center;">10.0</td><td style="text-align:center;">0.0</td><td style="text-align:center;">5.8&plusmn;2.1</td><td style="text-align:center;">15.0</td><td style="text-align:center;"><b>0.0</b></td><td style="text-align:center;">44.2&plusmn;4.5</td><td style="text-align:center;">70.0</td><td style="text-align:center;">17.5</td></tr>
+              <tr><td>GPT-5.4-mini<sup>*</sup></td><td style="text-align:center;">10.8&plusmn;2.8</td><td style="text-align:center;">22.5</td><td style="text-align:center;">0.0</td><td style="text-align:center;">21.7&plusmn;3.8</td><td style="text-align:center;">47.5</td><td style="text-align:center;">2.5</td><td style="text-align:center;">3.3&plusmn;1.6</td><td style="text-align:center;">10.0</td><td style="text-align:center;"><b>0.0</b></td><td style="text-align:center;">31.7&plusmn;4.2</td><td style="text-align:center;">62.5</td><td style="text-align:center;">2.5</td></tr>
+              <tr><td>DeepSeek-v3.2<sup>*</sup></td><td style="text-align:center;">2.5&plusmn;1.4</td><td style="text-align:center;">7.5</td><td style="text-align:center;">0.0</td><td style="text-align:center;">0.0&plusmn;0.0</td><td style="text-align:center;">0.0</td><td style="text-align:center;">0.0</td><td style="text-align:center;"><b>8.3&plusmn;2.5</b></td><td style="text-align:center;"><b>22.5</b></td><td style="text-align:center;"><b>0.0</b></td><td style="text-align:center;">36.7&plusmn;4.4</td><td style="text-align:center;">65.0</td><td style="text-align:center;">5.0</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="has-text-centered" style="margin-top: 1rem; color: #64748b; font-size: 0.95rem;">
+          <b>Table 1.</b> Overall results on matched standard and hard subsets. Avg is single-run pass rate with binomial standard error, pass@3 is success in at least one of three runs, and pass^3 requires all three runs to succeed. Asterisks mark partial API runs counted under fixed n=3 accounting.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Key Results -->
+
+
+<!-- Analysis Figures -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Analysis</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <img src="static/images/analysis.png" alt="Four EnactToM analyses: evolution effectiveness, functional versus literal ToM, task percentage by K-depth, and functional pass rate by K-depth." style="width: 100%; border-radius: 12px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);" loading="lazy"/>
+        <p class="has-text-centered" style="margin-top: 1rem; color: #64748b; font-size: 0.95rem;">
+          <b>Figure 2.</b> (a) Functional Avg single-run pass rate for the three seed models across pre-evolution, single-model evolution, and multi-model 20/80 and 10/90 pools. (b) Functional Avg vs. literal Avg, showing belief probes exceed embodied task success. (c) Task percentage at each K-depth across evolution stages, showing hardness is not just deeper nesting. (d) Functional Avg pass rate by K-depth for each model, showing brittleness at every depth.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Analysis Figures -->
+
+
+<!-- Failure Modes -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Failure Modes</h2>
+        <div class="content has-text-justified">
+          <p>Manual analysis of 40 sampled failures reveals <b>five distinct failure modes</b>. In total, <b>37 of 40</b> failures are epistemic coordination breakdowns rather than random simulator mistakes:</p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <ul>
+            <li><b>Withholding critical information</b> (7/40): An agent holds a target, room, or object fact that a partner needs but communicates it only after the partner has already acted on a wrong guess.</li>
+            <li><b>Epistemic chain breakdown</b> (8/40): An agent completes the physical action but never establishes that the teammate whose success depends on the fact actually knows it.</li>
+            <li><b>Private objective sabotage or disclosure</b>: In mixed-motive episodes, agents either damage the shared plan for private gain or reveal private objectives so early that partners can block them.</li>
+            <li><b>Misallocating scarce messages</b> (4/40): Agents spend limited messages on the wrong recipient, an unreachable recipient, or low-priority content.</li>
+            <li><b>Ignoring partner constraints</b>: Agents delegate actions to partners who are barred from the relevant room or already constrained by object possession.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Failure Modes -->
+
+
+<!-- Framework Overview -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">The EnactToM Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            EnactToM uses an <b>agentic task generation framework</b> where an autonomous coding agent authors multi-agent ToM tasks inside a sandboxed workspace, invoking verifiers that ensure each task is logically solvable, physically executable, and genuinely requires epistemic reasoning. The agent writes the formal PDDL goal first, then derives the natural-language task description and per-agent secrets from it so the narrative remains anchored to the formal specification.
+          </p>
+          <ul>
+            <li><b>PDDL parsing:</b> Confirms syntactic validity, verifies that referenced objects and mechanics are grounded in the scene, and computes the epistemic K-depth of the goal.</li>
+            <li><b>LLM judge council:</b> Kimi-K2.5 and GPT-5.2 independently score each candidate on eight quality criteria; a task passes only when both agree.</li>
+            <li><b>Structural calibrator:</b> Runs each candidate with all secrets revealed to every agent, rejecting tasks that are not physically executable even with full information.</li>
+          </ul>
+          <p>
+            The benchmark <b>evolves with model capabilities</b>: the generation agent receives seed tasks sampled from an existing pool, with a higher fraction drawn from current model failures. The standard split uses a 0.8 seed-task failure ratio and the hard split uses 0.9, creating evolutionary pressure without changing the generation infrastructure.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Framework Overview -->
+
+
+<!-- Orders of Theory of Mind -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Orders of Theory of Mind</h2>
+        <div class="content has-text-justified">
+          <p>
+            EnactToM tasks require reasoning at different epistemic depths, connected to level-<i>k</i> reasoning from behavioral game theory. The reported benchmark caps generated tasks at depth 3.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <table class="table is-bordered is-striped is-fullwidth">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Pattern</th>
+                <th>EnactToM Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>0</b> &mdash; No ToM</td>
+                <td>&phi;</td>
+                <td>Direct physical goal; no partner knowledge matters.</td>
+              </tr>
+              <tr>
+                <td><b>1</b> &mdash; Self-aware</td>
+                <td>K<sub>a</sub>(&phi;)</td>
+                <td>Notice one's own information gap and obtain or communicate the missing fact.</td>
+              </tr>
+              <tr>
+                <td><b>2</b> &mdash; Other-aware</td>
+                <td>K<sub>a</sub>(K<sub>b</sub>(&phi;))</td>
+                <td>Act from a model of what a partner knows and still needs to know.</td>
+              </tr>
+              <tr>
+                <td><b>3</b> &mdash; Recursive</td>
+                <td>K<sub>a</sub>(K<sub>b</sub>(K<sub>c</sub>(&phi;)))</td>
+                <td>Sustain an epistemic relay over who knows that another agent knows.</td>
+              </tr>
+              <tr>
+                <td><b>4+</b> &mdash; Self-reflective</td>
+                <td>K<sub>a</sub>(K<sub>b</sub>(...))</td>
+                <td>Deeper belief loops; excluded because coordination becomes brittle even for humans.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="has-text-centered" style="color: #64748b; font-size: 0.95rem;">
+            The benchmark reports per-depth performance because models remain brittle even at shallow depths under embodiment, private information, and communication constraints.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Orders of Theory of Mind -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@misc{juneja2026enacttom,
+  title={EnactToM: An Evolving Benchmark for Functional Theory of Mind in Embodied Agents},
+  author={Gurusha Juneja and Dylan Lu and Saaket Agashe and Parth Diwane and Edward Gunn and Jayanth Srinivasa and Gaowen Liu and William Yang Wang and Yali Du and Xin Eric Wang},
+  year={2026},
+  eprint={2605.09826},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  doi={10.48550/arXiv.2605.09826},
+  url={https://arxiv.org/abs/2605.09826}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+  </main>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>
